@@ -151,8 +151,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 818327857}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchorMin: {x: 0.25, y: 0}
+  m_AnchorMax: {x: 0.75, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -229,7 +229,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &105703565
 MonoBehaviour:
@@ -303,7 +303,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &314567909
 GameObject:
@@ -340,7 +340,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &314567911
 MonoBehaviour:
@@ -389,6 +389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 760829207}
+  - component: {fileID: 760829208}
   m_Layer: 0
   m_Name: Number Of Stunts
   m_TagString: Untagged
@@ -413,6 +414,19 @@ Transform:
   - {fileID: 1411568031}
   m_Father: {fileID: 1025971699}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &760829208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760829206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b408d369df219a3499821caea311533a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionSlider: {fileID: 0}
 --- !u!1 &818327856
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +438,7 @@ GameObject:
   - component: {fileID: 818327857}
   - component: {fileID: 818327858}
   m_Layer: 5
-  m_Name: CubeDude Color Slider
+  m_Name: Bubble Position Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,7 +464,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 10, y: 15}
-  m_SizeDelta: {x: 200, y: 20}
+  m_SizeDelta: {x: 20, y: 408.61}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &818327858
 MonoBehaviour:
@@ -495,14 +509,26 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 105703565}
   m_FillRect: {fileID: 314567910}
   m_HandleRect: {fileID: 105703564}
-  m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 10
-  m_WholeNumbers: 0
-  m_Value: 0
+  m_Direction: 2
+  m_MinValue: 150
+  m_MaxValue: 750
+  m_WholeNumbers: 1
+  m_Value: 150
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 760829208}
+        m_TargetAssemblyTypeName: PositionController, Assembly-CSharp
+        m_MethodName: SetPositionX
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &824682933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,14 +1120,7 @@ MonoBehaviour:
   cubeDudePrefab: {fileID: 1854142042417332411, guid: fdb721d10b1839e46bd305ac2b7f8323, type: 3}
   spawnPoint: {fileID: 1272479074}
   t: 0
-  start: {fileID: 0}
-  end: {fileID: 0}
-  curve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  targetButton: {fileID: 824682935}
 --- !u!212 &1272479076
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1400,10 +1419,10 @@ RectTransform:
   - {fileID: 314567910}
   m_Father: {fileID: 818327857}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchorMin: {x: 0.25, y: 0}
+  m_AnchorMax: {x: 0.75, y: 1}
+  m_AnchoredPosition: {x: 0, y: -5}
+  m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2113947666
 GameObject:
