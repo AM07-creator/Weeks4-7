@@ -390,7 +390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 760829207}
   m_Layer: 0
-  m_Name: Stunt Text Pop-Up
+  m_Name: Number Of Stunts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 105703564}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -589,6 +589,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1272479075}
         m_TargetAssemblyTypeName: CubeDudeStunt, Assembly-CSharp
         m_MethodName: SpawnCubeDude
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1217846142}
+        m_TargetAssemblyTypeName: CountStunts, Assembly-CSharp
+        m_MethodName: AddStuntNumber
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -888,6 +900,7 @@ GameObject:
   - component: {fileID: 1217846139}
   - component: {fileID: 1217846141}
   - component: {fileID: 1217846140}
+  - component: {fileID: 1217846142}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -906,8 +919,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.033333335, y: 0.033333335, z: 0.033333335}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1229145185}
+  m_Children: []
   m_Father: {fileID: 760829207}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -16.02}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -935,7 +947,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Zam!
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1014,41 +1026,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217846138}
   m_CullTransparentMesh: 1
---- !u!1 &1229145184
-GameObject:
+--- !u!114 &1217846142
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1229145185}
-  m_Layer: 5
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1229145185
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1229145184}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1217846139}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_GameObject: {fileID: 1217846138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2ed4e197ca9db46939a5cfe61b0ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  howManyStunts: 0
+  stunts: {fileID: 1217846140}
+  spawnerObject: {fileID: 1272479073}
 --- !u!1 &1272479073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,6 +1093,15 @@ MonoBehaviour:
   speed: 0.01
   cubeDudePrefab: {fileID: 1854142042417332411, guid: fdb721d10b1839e46bd305ac2b7f8323, type: 3}
   spawnPoint: {fileID: 1272479074}
+  t: 0
+  start: {fileID: 0}
+  end: {fileID: 0}
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!212 &1272479076
 SpriteRenderer:
   m_ObjectHideFlags: 0
