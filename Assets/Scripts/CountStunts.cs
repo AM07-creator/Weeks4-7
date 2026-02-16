@@ -4,10 +4,12 @@ using UnityEngine.UI;
 
 public class CountStunts : MonoBehaviour
 {
+
+//This script is used to add the number of stunts performed (button clicks) in the little comic speech bubble, as well as grabbing the CubeDudeStunt script to allow you to click a key and stunt without adding to the text box
 	SpriteRenderer sr; //the square sprite in the world
 	public int howManyStunts = 0;
 	public TextMeshProUGUI stunts;
-
+	public GameObject spawnerObject;
 
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
@@ -17,11 +19,20 @@ public class CountStunts : MonoBehaviour
 		stunts.text = howManyStunts.ToString();
 	}
 
-    // Update is called once per frame
-    void Update()
-    {
-		
-    }
+	// Update is called once per frame
+	void Update()
+	{ //press r to make CubeDude perform a stunt without it being tracked on the UI
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			// Use GetComponent to get CubeDudeStunt
+			CubeDudeStunt spawnerScript = spawnerObject.GetComponent<CubeDudeStunt>();
+
+			if (spawnerScript != null)
+			{
+				spawnerScript.SpawnCubeDude();
+			}
+		}
+	}
 	public void AddStuntNumber()
 	{
 	//add to the number value of the text when function called (by button)
