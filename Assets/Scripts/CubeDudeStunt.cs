@@ -29,7 +29,10 @@ public class CubeDudeStunt : MonoBehaviour
     {
 		// local variable for rotation
 		float randomZ = Random.Range(0f, 360f);
+		// pick a random z rotation
 		Quaternion randomRotation = Quaternion.Euler(0, 0, randomZ);
-		Instantiate(cubeDudePrefab, transform.position, randomRotation);
+        //instantiate the prefab transform pos and random z rotation
+        Vector2 spawnPos = Random.insideUnitCircle * 5;
+		Instantiate(cubeDudePrefab, spawnPos, randomRotation);
 	}
 }
