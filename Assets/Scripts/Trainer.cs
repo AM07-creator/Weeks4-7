@@ -8,8 +8,13 @@ public class Trainer : MonoBehaviour
     public Camera gameCam;
     public Color caughtColor;
 
+    public Hider porkHider;
+
     public List<SpriteRenderer> uncaughtPorks;
     public List<SpriteRenderer> caughtPorks;
+
+    public int x;
+    public float y;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,6 +60,7 @@ public class Trainer : MonoBehaviour
                 Debug.Log("Is Pork Caught[" + isPorkCaught.ToString() + "]");
                 if (!caughtPorks.Contains(johnPork))
                 {
+                    porkHider.Hide();
                     caughtPorks.Add(johnPork);
                 }
                 uncaughtPorks.Remove(johnPork);

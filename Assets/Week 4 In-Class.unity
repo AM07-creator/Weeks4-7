@@ -204,7 +204,7 @@ Transform:
   m_GameObject: {fileID: 280121094}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.81, y: 1.15, z: 0}
+  m_LocalPosition: {x: 3.15, y: 1.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -242,12 +242,15 @@ MonoBehaviour:
   johnPork: {fileID: 2126527368}
   gameCam: {fileID: 875613811}
   caughtColor: {r: 1, g: 0, b: 0, a: 1}
+  porkHider: {fileID: 2126527370}
   uncaughtPorks:
   - {fileID: 2126527368}
+  caughtPorks:
   - {fileID: 280121095}
   - {fileID: 1498251741}
   - {fileID: 1159829382}
-  caughtPorks: []
+  x: 0
+  y: 0
 --- !u!4 &604029135
 Transform:
   m_ObjectHideFlags: 0
@@ -274,6 +277,7 @@ GameObject:
   - component: {fileID: 875613812}
   - component: {fileID: 875613811}
   - component: {fileID: 875613810}
+  - component: {fileID: 875613813}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -355,6 +359,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &875613813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875613809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &1159829381
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +488,7 @@ Transform:
   m_GameObject: {fileID: 1159829381}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.93, y: -2.83, z: 0}
+  m_LocalPosition: {x: 3.2700002, y: -2.1299999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -531,7 +579,7 @@ Transform:
   m_GameObject: {fileID: 1498251740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.42, y: -2.58, z: 0}
+  m_LocalPosition: {x: -3.08, y: -1.8799999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -547,6 +595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2126527369}
   - component: {fileID: 2126527368}
+  - component: {fileID: 2126527370}
   m_Layer: 0
   m_Name: John Pork
   m_TagString: Untagged
@@ -622,12 +671,25 @@ Transform:
   m_GameObject: {fileID: 2126527367}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3, y: 1.11, z: 0}
+  m_LocalPosition: {x: -2.9599998, y: 1.8100001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2126527370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126527367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a609058c3977d3342878031b1aeb3110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Hider
+  hidePos: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
