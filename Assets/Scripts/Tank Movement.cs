@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class TankMovement : MonoBehaviour
 {
-    public float speed;
+    public float speed = 0.01f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,15 +14,15 @@ public class TankMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool isLeftHeld = Keyboard.current.leftArrowKey.isPressed;
-        if (isLeftHeld == true)
-        {
-            transform.eulerAngles -= transform.right * speed * Time.deltaTime;
-        }
-        bool isRightHeld = Keyboard.current.rightArrowKey.isPressed;
-        if (isRightHeld == true)
-        {
-            transform.eulerAngles += transform.right * speed * Time.deltaTime;
-        }
-    }
+		bool isLeftHeld = Keyboard.current.leftArrowKey.isPressed;
+		if (isLeftHeld == true)
+		{
+			transform.position -= transform.right * speed * Time.deltaTime;
+		}
+		bool isRightHeld = Keyboard.current.rightArrowKey.isPressed;
+		if (isRightHeld == true)
+		{
+			transform.position += transform.right * speed * Time.deltaTime;
+		}
+	}
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public class Trainer : MonoBehaviour
 {
