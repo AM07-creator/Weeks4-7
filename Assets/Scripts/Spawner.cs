@@ -25,6 +25,8 @@ public class Spawner : MonoBehaviour
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
+            
+
             //Spawn a runner!
             //Instantiate(runnerPrefab);
 
@@ -33,19 +35,23 @@ public class Spawner : MonoBehaviour
             //Instantiate(runnerPrefab, transform);
 
             //spawn a runner at a specific position w/ no rotation
-            GameObject spawnedObject = Instantiate(runnerPrefab, transform.position, Quaternion.identity);
+            //GameObject spawnedObject = Instantiate(runnerPrefab, transform.position, Quaternion.identity);
 
-            SpriteRenderer spawnedSpriteRenderer = spawnedObject.GetComponent<SpriteRenderer>();
-            spawnedSpriteRenderer.color = Color.red;
+            //SpriteRenderer spawnedSpriteRenderer = spawnedObject.GetComponent<SpriteRenderer>();
+            //spawnedSpriteRenderer.color = Color.red;
 
-            //Make the spawned object move at the spawner speed
-            Runner spawnedRunner = spawnedObject.GetComponent<Runner>();
-            if (spawnedRunner != null)
-            {
-                spawnedRunner.speed = spawnSpeed;
-            }
+            ////Make the spawned object move at the spawner speed
+            //Runner spawnedRunner = spawnedObject.GetComponent<Runner>();
+            //if (spawnedRunner != null)
+            //{
+            //    spawnedRunner.speed = spawnSpeed;
+            //}
 
-            Destroy(spawnedObject, 2f);
+            //Destroy(spawnedObject, 2f);
         }
+    }
+    void OnSpawnPress()
+    {
+
     }
 }
