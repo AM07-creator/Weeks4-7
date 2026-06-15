@@ -1,5 +1,6 @@
 {
   "dependencies": {
+<<<<<<< Updated upstream
     "com.unity.2d.animation": {
       "version": "13.0.5",
       "depth": 1,
@@ -131,12 +132,15 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> Stashed changes
     "com.unity.ext.nunit": {
       "version": "2.0.5",
       "depth": 2,
       "source": "builtin",
       "dependencies": {}
     },
+<<<<<<< Updated upstream
     "com.unity.feature.2d": {
       "version": "2.0.2",
       "depth": 0,
@@ -153,6 +157,8 @@
         "com.unity.2d.tooling": "1.0.3"
       }
     },
+=======
+>>>>>>> Stashed changes
     "com.unity.ide.visualstudio": {
       "version": "2.0.27",
       "depth": 0,
@@ -186,6 +192,7 @@
         "com.unity.modules.uielements": "1.0.0"
       }
     },
+<<<<<<< Updated upstream
     "com.unity.nuget.mono-cecil": {
       "version": "1.11.6",
       "depth": 3,
@@ -193,6 +200,8 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> Stashed changes
     "com.unity.test-framework": {
       "version": "1.6.0",
       "depth": 1,
@@ -203,6 +212,7 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       }
     },
+<<<<<<< Updated upstream
     "com.unity.test-framework.performance": {
       "version": "3.2.0",
       "depth": 3,
@@ -213,6 +223,8 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> Stashed changes
     "com.unity.ugui": {
       "version": "2.0.0",
       "depth": 0,
